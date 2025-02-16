@@ -22,7 +22,7 @@ const createUser = async(req, res) => {
     const verificationToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1d" });
     newUser.verificationToken = verificationToken;
     await newUser.save()
-    const verificationLink = `http://localhost:5000/api/users/verify/${verificationToken}`;
+    const verificationLink = `https://user-and-its-post-management.onrender.com/api/users/verify/${verificationToken}`;
     await sendEmail(email, "Verify Your Email", `<p>Click <a href="${verificationLink}">here</a> to verify your account.</p>`);
     return res.status(201).json({ message: 'User created successfully', user: {name, email} });
     } catch(error) {
