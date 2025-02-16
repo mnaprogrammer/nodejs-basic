@@ -50,7 +50,7 @@ To send email to user to verify account, upload pic to S3 and user token to aacc
 To run the project, execute the following command:
 
 ```bash
-npm start
+nodemon start
 ```
 
 This will start a local development server, typically on `http://localhost:3000`.
